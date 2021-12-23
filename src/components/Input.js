@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import {saveTodo} from "../features/todoSlice";
+import { saveTodo } from "../features/todoSlice";
 
 const Container = styled.div`
   height: 50px;
@@ -35,8 +35,6 @@ const Input = () => {
   const dispatch = useDispatch();
 
   const addTodo = () => {
-    console.log(`Adding ${input}`);
-
     dispatch(
       saveTodo({
         item: input,
@@ -44,6 +42,7 @@ const Input = () => {
         id: Date.now(),
       })
     );
+    setInput('')
   };
 
   return (
